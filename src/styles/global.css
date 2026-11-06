@@ -21,6 +21,15 @@
 #lab-experiments{scroll-margin-top:88px}
 @media(max-width:600px){.labs-page-hero.labs-gateway{padding-top:108px}.labs-page-hero #labs-gateway-title{font-size:34px}}
 /* Floating glass navigation and a viewport-sized opening composition. */
+.icon{display:inline-block;width:1em;height:1em;flex-shrink:0;vertical-align:-.12em;overflow:visible;pointer-events:none}
+.menu-toggle .icon{width:24px;height:24px;vertical-align:middle}
+.menu-toggle .icon-close{display:none}
+.menu-toggle[aria-expanded=true] .icon-menu{display:none}
+.menu-toggle[aria-expanded=true] .icon-close{display:inline-block}
+.effect-toggle>.icon{font-size:14px}
+.footer>div:not(.footer-bottom){flex-wrap:wrap}
+.footer>div:not(.footer-bottom)>a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.labs-wordmark .icon{vertical-align:baseline}
 .process-grid>div{transition:border-color .25s}
 @media(hover:hover) and (pointer:fine){.process-grid>div:hover{border-top-color:var(--dark)}}
 .services-section{position:relative;isolation:isolate;min-height:690px}

@@ -1,3 +1,4 @@
+import Icon from './Icon.jsx';
 import {useState} from 'react';
 import FaultyTerminal from './reactbits/FaultyTerminal';
 import useReducedMotion from './useReducedMotion';
@@ -13,11 +14,11 @@ export default function LabsGateway({lang='es',page=false}){
   </div>
   <div className="labs-gateway-top"><p className="eyebrow"><span className="status-dot"/> {page?'BRALIPO / LABS':'03 / BRALIPO LABS'}</p><span className="lab-code" aria-hidden="true">[ {es?'IDEAS EN EXPLORACIÓN':'IDEAS IN EXPLORATION'} ]</span></div>
   <div className="labs-gateway-content">
-   <span className="labs-wordmark" aria-hidden="true">LABS<span>↗</span></span>
+   <span className="labs-wordmark" aria-hidden="true">LABS<span><Icon name="arrow-up-right"/></span></span>
    <Heading id="labs-gateway-title">{es?'Ideas propias.':'Independent ideas.'}<br/><em>{es?'Posibilidades reales.':'Real possibilities.'}</em></Heading>
    <p>{es?'Nuestro espacio para experimentar con inteligencia artificial. Aplicaciones, personajes virtuales e ideas que llevamos a la práctica.':'Our space to experiment with artificial intelligence. Apps, virtual characters and ideas that we bring to life.'}</p>
-   <a className="button" href={page?'#lab-experiments':`/${lang}/labs/`}>{page?(es?'Explorar proyectos':'Explore projects'):(es?'Entrar a Labs':'Enter Labs')} <span>{page?'↓':'↗'}</span></a>
+   <a className="button" href={page?'#lab-experiments':`/${lang}/labs/`}>{page?(es?'Explorar proyectos':'Explore projects'):(es?'Entrar a Labs':'Enter Labs')} <span><Icon name={page?"arrow-down":"arrow-up-right"}/></span></a>
   </div>
-  <div className="labs-gateway-bottom"><div className="lab-topics"><span>{es?'APLICACIONES':'APPLICATIONS'}</span><span>{es?'PERSONAJES VIRTUALES':'VIRTUAL CHARACTERS'}</span><span>{es?'EXPERIMENTOS':'EXPERIMENTS'}</span></div>{!reduced&&<button type="button" className="effect-toggle" aria-pressed={paused} onClick={()=>setPaused(!paused)}>{paused?'▷':'Ⅱ'} <span>{es?(paused?'Activar fondo':'Pausar fondo'):(paused?'Enable background':'Pause background')}</span></button>}</div>
+  <div className="labs-gateway-bottom"><div className="lab-topics"><span>{es?'APLICACIONES':'APPLICATIONS'}</span><span>{es?'PERSONAJES VIRTUALES':'VIRTUAL CHARACTERS'}</span><span>{es?'EXPERIMENTOS':'EXPERIMENTS'}</span></div>{!reduced&&<button type="button" className="effect-toggle" aria-pressed={paused} onClick={()=>setPaused(!paused)}><Icon name={paused?"play":"pause"}/> <span>{es?(paused?'Activar fondo':'Pausar fondo'):(paused?'Enable background':'Pause background')}</span></button>}</div>
  </section>;
 }

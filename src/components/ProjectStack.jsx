@@ -1,3 +1,4 @@
+import Icon from './Icon.jsx';
 import ScrollStack, {ScrollStackItem} from './reactbits/ScrollStack';
 import useReducedMotion from './useReducedMotion';
 import './ProjectStack.css';
@@ -15,7 +16,7 @@ export default function ProjectStack({entries,lang='es'}) {
     <div className="project-stack-caption">
      <span className="project-stack-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
      <div><h3>{entry.title}</h3><p>{entry[lang].scope}</p></div>
-     <span className="project-stack-cta">{es?'Ver proyecto':'View project'} <span aria-hidden="true">↗</span></span>
+     <span className="project-stack-cta">{es?'Ver proyecto':'View project'} <span aria-hidden="true"><Icon name="arrow-up-right"/></span></span>
     </div>
    </a>
   </article>

@@ -1,10 +1,11 @@
 ---
+import Icon from './Icon.jsx';
 import {t,href} from '../data.js';
 const {lang}=Astro.props;
 const enabled=import.meta.env.PUBLIC_FORM_ENABLED==='true';
 ---
 <div class="contact-grid">
- <div><p class="eyebrow">{t(lang,'HABLEMOS','LET’S TALK')}</p><h1>{t(lang,'Tu próximo proyecto empieza con una','Your next project starts with a')} <em>{t(lang,'conversación.','conversation.')}</em></h1><p>{t(lang,'Contanos qué tenés en mente y veamos cómo podemos ayudarte.','Tell us what you have in mind. Let’s see how we can help.')}</p><a class="contact-email" href="mailto:bralipo2@gmail.com">bralipo2@gmail.com ↗</a><p class="small muted">{t(lang,'Desde Argentina, para proyectos de cualquier lugar.','Based in Argentina. Open to projects everywhere.')}</p></div>
+ <div><p class="eyebrow">{t(lang,'HABLEMOS','LET’S TALK')}</p><h1>{t(lang,'Tu próximo proyecto empieza con una','Your next project starts with a')} <em>{t(lang,'conversación.','conversation.')}</em></h1><p>{t(lang,'Contanos qué tenés en mente y veamos cómo podemos ayudarte.','Tell us what you have in mind. Let’s see how we can help.')}</p><a class="contact-email" href="mailto:bralipo2@gmail.com">bralipo2@gmail.com <Icon name="arrow-up-right"/></a><p class="small muted">{t(lang,'Desde Argentina, para proyectos de cualquier lugar.','Based in Argentina. Open to projects everywhere.')}</p></div>
  <form name="contact" method="POST" action={lang==='es'?'/es/gracias/':'/en/thank-you/'} data-submit-path={href(lang,'contact')} data-netlify="true" netlify-honeypot="website" data-contact-form data-enabled={enabled.toString()} data-lang={lang}>
   <input type="hidden" name="form-name" value="contact"/><input type="hidden" name="language" value={lang}/>
   <p hidden><label>Leave empty <input name="website" tabindex="-1" autocomplete="off"/></label></p>
@@ -14,7 +15,7 @@ const enabled=import.meta.env.PUBLIC_FORM_ENABLED==='true';
   <label for="service">{t(lang,'¿Qué necesitás? (opcional)','What do you need? (optional)')}</label><select id="service" name="service"><option value="">{t(lang,'Seleccioná un servicio','Select a service')}</option><option>Branding</option><option>{t(lang,'Diseño y desarrollo web','Web design & development')}</option><option>{t(lang,'Soluciones con IA','AI projects')}</option><option>{t(lang,'Todavía no lo sé','Not sure yet')}</option></select>
   <label for="message">{t(lang,'Contanos sobre tu proyecto','Tell us about your project')} *</label><textarea id="message" name="message" rows="4" required minlength="10" maxlength="5000"></textarea>
   <p class="small muted">{t(lang,'Usaremos estos datos únicamente para responder tu consulta.','We will only use these details to reply to your inquiry.')}</p>
-  <button class="button" type="submit" disabled={!enabled}>{t(lang,'Enviar consulta','Send inquiry')} <span>↗</span></button>
+  <button class="button" type="submit" disabled={!enabled}>{t(lang,'Enviar consulta','Send inquiry')} <span><Icon name="arrow-up-right"/></span></button>
   <p class="form-status" role="status" aria-live="polite"></p>
   {!enabled&&<p class="small muted">{t(lang,'Vista previa: el envío todavía no está habilitado. Podés escribirnos por email.','Preview: form delivery is not enabled yet. You can contact us by email.')}</p>}
  </form>

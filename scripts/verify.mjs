@@ -2,6 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 const root=path.resolve(process.env.VERIFY_DIR||'dist');
+// UI icons must remain SVG paths; Unicode arrows can render as emoji on iOS.
+for(const source of files('src').filter(p=>/\.(astro|jsx)$/.test(p)&&!p.includes('reactbits'))){
+ assert.doesNotMatch(fs.readFileSync(source,'utf8'),/[↗↓↑←→▷Ⅱ↘▶⏸]/,`${source}: use SVG for UI icons`);
+}
 function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(x=>x.isDirectory()?files(path.join(dir,x.name)):[path.join(dir,x.name)]);}
 const all=files(root).filter(p=>p.endsWith('.html')&&!p.includes(`${path.sep}admin${path.sep}`));
 let checked=0;
@@ -31,6 +35,7 @@ for(const lang of ['es','en']){
  const home=fs.readFileSync(path.join(root,lang,'index.html'),'utf8');
  assert.match(home,/Identidades|Distinctive/,'Hero is in server HTML');
  assert.match(home,/Poppins|stylesheet/,'Styles are linked');
+ assert.match(home,/<svg[^>]+class="icon icon-arrow-up-right/,'SVG arrows are in server HTML');
 }
 const admin=fs.readFileSync(path.join(root,'admin','config.yml'),'utf8');
 assert.match(admin,/name: projects/);assert.match(admin,/name: labs/);

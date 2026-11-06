@@ -1,3 +1,4 @@
+import Icon from './Icon.jsx';
 import AnimatedContent from './reactbits/AnimatedContent';
 import ChromeRing from './ChromeRing';
 import Grainient from './reactbits/Grainient';
@@ -16,10 +17,10 @@ export default function Hero({lang='es'}){
     <h1 id="hero-heading">{es?<><span className="headline-bold">Identidades</span><em>con carácter.</em><span className="headline-light">Ideas que</span><strong>toman forma.</strong></>:<><span className="headline-bold">Distinctive</span><em>by design.</em><span className="headline-light">Ideas taking</span><strong>shape.</strong></>}</h1>
    </AnimatedContent>
    <p className="hero-description">{es?'Branding, desarrollo web e inteligencia artificial para darle forma a tu próximo proyecto.':'Branding, web development and artificial intelligence to bring your next project to life.'}</p>
-   <div className="actions"><a className="button" href={`/${lang}/${es?'contacto':'contact'}/`}>{es?'Contanos tu proyecto':'Tell us about your project'} <span>↗</span></a><a className="text-link" href="#selected-work">{es?'Ver proyectos':'View our work'} <span>↓</span></a></div>
+   <div className="actions"><a className="button" href={`/${lang}/${es?'contacto':'contact'}/`}>{es?'Contanos tu proyecto':'Tell us about your project'} <span><Icon name="arrow-up-right"/></span></a><a className="text-link" href="#selected-work">{es?'Ver proyectos':'View our work'} <span><Icon name="arrow-down"/></span></a></div>
   </div>
   <ChromeRing paused={paused}/>
-  {!reduced&&<button className="effect-toggle hero-motion-toggle" type="button" aria-pressed={paused} onClick={()=>setPaused(!paused)}>{paused?'▷':'Ⅱ'} <span>{es?(paused?'Activar movimiento':'Pausar movimiento'):(paused?'Enable motion':'Pause motion')}</span></button>}
-  <div className="hero-bottom"><span>{es?'DISEÑO CON INTENCIÓN. TECNOLOGÍA CON PROPÓSITO.':'DESIGN WITH INTENT. TECHNOLOGY WITH PURPOSE.'}</span><span className="hero-line"/><span>{es?'SEGUÍ EXPLORANDO ↓':'SCROLL TO EXPLORE ↓'}</span></div>
+  {!reduced&&<button className="effect-toggle hero-motion-toggle" type="button" aria-pressed={paused} onClick={()=>setPaused(!paused)}><Icon name={paused?"play":"pause"}/> <span>{es?(paused?'Activar movimiento':'Pausar movimiento'):(paused?'Enable motion':'Pause motion')}</span></button>}
+  <div className="hero-bottom"><span>{es?'DISEÑO CON INTENCIÓN. TECNOLOGÍA CON PROPÓSITO.':'DESIGN WITH INTENT. TECHNOLOGY WITH PURPOSE.'}</span><span className="hero-line"/><span>{es?'SEGUÍ EXPLORANDO':'SCROLL TO EXPLORE'} <Icon name="arrow-down"/></span></div>
  </section>;
 }

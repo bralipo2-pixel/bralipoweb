@@ -1,8 +1,9 @@
 ---
+import Icon from './Icon.jsx';
 import Layout from '../layouts/Layout.astro';
 import {t,href} from '../data.js';
 const {lang}=Astro.props;
 ---
 <Layout lang={lang} title={t(lang,'Gracias por escribirnos','Thanks for getting in touch')} description={t(lang,'Confirmación de envío del formulario de contacto de Bralipo.','Bralipo contact form submission confirmation.')} otherPath={lang==='es'?'/en/thank-you/':'/es/gracias/'} demo={true}>
- <section class="section"><p class="eyebrow">BRALIPO</p><h1>{t(lang,'Gracias por','Thanks for')}<br/><em>{t(lang,'escribirnos.','getting in touch.')}</em></h1><p class="intro-text">{t(lang,'Tu consulta fue enviada. Te responderemos al email que nos dejaste.','Your inquiry has been sent. We’ll reply to the email address you provided.')}</p><a class="button" href={href(lang,'home')}>{t(lang,'Volver al inicio','Back to home')} ↗</a></section>
+ <section class="section"><p class="eyebrow">BRALIPO</p><h1>{t(lang,'Gracias por','Thanks for')}<br/><em>{t(lang,'escribirnos.','getting in touch.')}</em></h1><p class="intro-text">{t(lang,'Tu consulta fue enviada. Te responderemos al email que nos dejaste.','Your inquiry has been sent. We’ll reply to the email address you provided.')}</p><a class="button" href={href(lang,'home')}>{t(lang,'Volver al inicio','Back to home')} <Icon name="arrow-up-right"/></a></section>
 </Layout>
