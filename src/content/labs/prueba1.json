@@ -1,0 +1,42 @@
+{
+  "demo": false,
+  "en": {
+    "seoDescription": "descripcion seo ingles",
+    "alt": "Descripcion accesible portada e ingles jajaja",
+    "summary": "Resumen en ingles....",
+    "description": "descripcion del caso en ingles..haha\n\njsjs",
+    "scope": "Servicios y area ingles babys",
+    "role": "Aca hice todo tambien jajaja",
+    "seoTitle": "Titulo seo en ingles jajaja"
+  },
+  "slug": "prueba1",
+  "featured": true,
+  "es": {
+    "scope": "Servicos o areassssss",
+    "role": "Esto lo hice solo yo",
+    "alt": "Descripcion accesible bitches",
+    "seoTitle": "IAseo",
+    "seoDescription": "Seo descripocion babys",
+    "summary": "Resumen en español babys\nnsjsns",
+    "description": "La descripcion del caso aca tambien jajaja"
+  },
+  "published": true,
+  "order": 10,
+  "gallery": [
+    {
+      "es": {
+        "alt": "Texto Alternativo español baby",
+        "caption": "Pie de imagen en espaol jajaja"
+      },
+      "en": {
+        "alt": "Texto alternativo ingles jajaja",
+        "caption": "Pies de imagen ingles jajaja"
+      },
+      "image": "/images/uploads/reemplazar_modelo_por_aelia_202609040010.jpeg"
+    }
+  ],
+  "status": "experiment",
+  "cover": "/images/uploads/combining_styles_in_photo_2k_20261011071756.jpg",
+  "title": "Prueba de IA",
+  "category": "apps"
+}

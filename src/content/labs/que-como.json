@@ -1,0 +1,32 @@
+{
+  "demo": false,
+  "en": {
+    "summary": "Turn what is in your kitchen into ideas for dinner.",
+    "description": "What should we eat? That everyday question sparked this app. Enter the ingredients you have and their quantities, and AI suggests recipes you can make. Recipes can be saved and shared.\n\nA personal Bralipo project exploring how technology can solve everyday problems creatively.",
+    "scope": "Application · Artificial intelligence",
+    "role": "Independent Bralipo project",
+    "alt": "Typographic cover for ¿Qué como?, not an app screenshot",
+    "seoTitle": "¿Qué como? — AI recipe app",
+    "seoDescription": "Explore ¿Qué como?, an independent Bralipo app suggesting recipes with AI based on your ingredients."
+  },
+  "slug": "que-como",
+  "external": "https://quecomoia.netlify.app/",
+  "featured": true,
+  "es": {
+    "summary": "Lo que tenés en la cocina, convertido en ideas para cocinar.",
+    "description": "¿Qué comemos? Una pregunta cotidiana fue el punto de partida de esta app. Ingresás los ingredientes que tenés y sus cantidades, y la inteligencia artificial te sugiere recetas que podés preparar. Las recetas se pueden guardar y compartir.\n\nUn proyecto propio de Bralipo para explorar cómo la tecnología puede resolver problemas cotidianos de una manera creativa.",
+    "scope": "Aplicación · Inteligencia artificial",
+    "role": "Proyecto propio de Bralipo",
+    "alt": "Portada tipográfica de ¿Qué como?, sin captura de la aplicación",
+    "seoTitle": "¿Qué como? — App de recetas con IA",
+    "seoDescription": "Conocé ¿Qué como?, un proyecto propio de Bralipo que sugiere recetas con inteligencia artificial a partir de tus ingredientes."
+  },
+  "published": true,
+  "order": 1,
+  "date": "2026-11-05T18:49:00.000-03:00",
+  "gallery": [],
+  "status": "live",
+  "cover": "/images/uploads/quecomopost.png",
+  "title": "¿Qué como?",
+  "category": "apps"
+}

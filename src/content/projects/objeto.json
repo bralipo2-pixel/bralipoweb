@@ -1,0 +1,30 @@
+{
+  "demo": true,
+  "en": {
+    "summary": "A digital space for a different perspective.",
+    "description": "A sample layout for a web project. Images and details are placeholders that can be replaced in Decap.",
+    "scope": "Web design · Development",
+    "role": "Demonstration content",
+    "alt": "Black and white editorial composition; demonstration image",
+    "seoTitle": "Objeto — demo project",
+    "seoDescription": "A sample web case study for the Bralipo preview."
+  },
+  "slug": "objeto",
+  "featured": true,
+  "es": {
+    "summary": "Un espacio digital para mirar diferente.",
+    "description": "Ejemplo de composición para un proyecto web. Las imágenes y los detalles son de prueba y se pueden reemplazar desde Decap.",
+    "scope": "Diseño web · Desarrollo",
+    "role": "Contenido de demostración",
+    "alt": "Composición editorial blanco y negro; imagen de demostración",
+    "seoTitle": "Objeto — demostración de proyecto",
+    "seoDescription": "Ejemplo de caso web para la vista previa de Bralipo."
+  },
+  "published": true,
+  "order": 2,
+  "date": "2026-11-05T18:19:00.000-03:00",
+  "gallery": [],
+  "cover": "/images/uploads/e0rsga0hiexlubl5i3ilvl6zg0.webp",
+  "title": "Crunchill",
+  "category": "web"
+}

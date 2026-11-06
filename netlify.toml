@@ -1,0 +1,45 @@
+[build]
+command = "npm run build && npm run check"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "24"
+PUBLIC_INDEXABLE = "false"
+PUBLIC_FORM_ENABLED = "false"
+
+[context.production.environment]
+PUBLIC_FORM_ENABLED = "true"
+
+[[redirects]]
+from = "/"
+to = "/es/"
+status = 302
+
+[[headers]]
+for = "/fonts/*"
+[headers.values]
+Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+for = "/admin/*"
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+Cache-Control = "no-cache"
+
+[[headers]]
+for = "/es/gracias/*"
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+for = "/en/thank-you/*"
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
+[context.deploy-preview.environment]
+PUBLIC_INDEXABLE = "false"
+PUBLIC_FORM_ENABLED = "false"
+
+[context.branch-deploy.environment]
+PUBLIC_INDEXABLE = "false"
+PUBLIC_FORM_ENABLED = "false"

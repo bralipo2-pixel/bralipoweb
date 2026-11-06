@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import {href,t,indexable} from '../data.js';
+const {lang='es',title,description,otherPath,canonicalPath=Astro.url.pathname,image='/images/logowhite.png',demo=false}=Astro.props;
+const origin=Astro.site?.origin||'http://localhost:4321';
+const live=indexable&&!demo&&!origin.includes('localhost');
+const canonical=new URL(canonicalPath,origin).href;
+const other=lang==='es'?'en':'es';
+const nav=[['projects',t(lang,'Proyectos','Projects')],['services',t(lang,'Servicios','Services')],['labs','Labs'],['studio',t(lang,'Estudio','Studio')]];
+const isHome=Astro.url.pathname===href(lang,'home')||Astro.url.pathname===href(lang,'labs');
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+ <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <title>{title} | Bralipo</title><meta name="description" content={description}/>
+ <meta name="robots" content={live?'index,follow':'noindex,nofollow'}/><meta name="theme-color" content="#1e1e1e"/>
+ {live&&<><link rel="canonical" href={canonical}/><link rel="alternate" hreflang={lang} href={canonical}/><link rel="alternate" hreflang={other} href={new URL(otherPath||href(other,'home'),origin).href}/><link rel="alternate" hreflang="x-default" href={new URL(lang==='es'?canonicalPath:otherPath||'/es/',origin).href}/></>}
+ <meta property="og:type" content="website"/><meta property="og:title" content={`${title} | Bralipo`}/><meta property="og:description" content={description}/><meta property="og:image" content={new URL(image,origin).href}/><meta property="og:url" content={canonical}/><meta property="og:locale" content={lang==='es'?'es_AR':'en_US'}/><meta property="og:site_name" content="Bralipo"/><meta name="twitter:card" content="summary_large_image"/>
+ <link rel="icon" type="image/png" href="/images/favicon.png"/>
+ <link rel="preload" href="/fonts/HubotSans.ttf" as="font" type="font/ttf" crossorigin/>
+ {live&&<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'Bralipo',url:origin,logo:new URL('/images/logowhite.png',origin).href,email:'bralipo2@gmail.com',sameAs:['https://www.linkedin.com/company/bralipo/','https://www.instagram.com/bra.lipo/']})}/>}
+</head>
+<body id="top" class:list={{'is-home':isHome}}>
+ <a class="skip-link" href="#main">{t(lang,'Saltar al contenido','Skip to content')}</a>
+ <header class="header">
+  <a href={href(lang,'home')} class="logo" aria-label={t(lang,'Bralipo, inicio','Bralipo, home')}><img src="/images/logowhite.png" width="534" height="122" alt="BRALIPO"/></a>
+  <nav class="desktop-nav" aria-label={t(lang,'Navegación principal','Main navigation')}>{nav.map(([key,label])=><a href={href(lang,key)} aria-current={Astro.url.pathname===href(lang,key)?'page':undefined}>{label}</a>)}</nav>
+  <div class="header-right"><a class="language" href={otherPath||href(other,'home')} lang={other} hreflang={other} aria-label={lang==='es'?'Switch to English':'Cambiar a español'}><span class:list={{active:lang==='es'}}>ES</span><span class="muted">/</span><span class:list={{active:lang==='en'}}>EN</span></a><a class="button small-button header-contact" href={href(lang,'contact')}>{t(lang,'Hablemos','Let’s talk')} <span>↗</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label={t(lang,'Abrir menú','Open menu')}><span></span><span></span></button></div>
+ </header>
+ <nav id="mobile-menu" class="mobile-menu" aria-label={t(lang,'Menú móvil','Mobile menu')} hidden>{[...nav,['contact',t(lang,'Contacto','Contact')]].map(([key,label],i)=><a style={`--i:${i}`} href={href(lang,key)}>{label}<span>↗</span></a>)}</nav>
+ <main id="main" tabindex="-1"><slot/></main>
+ <footer class="footer"><a href={href(lang,'home')} class="logo"><img src="/images/logowhite.png" width="534" height="122" alt="BRALIPO" loading="lazy"/></a><p>{t(lang,'Diseño con intención. Tecnología con propósito.','Design with intent. Technology with purpose.')}</p><div><a href="mailto:bralipo2@gmail.com">Email ↗</a><a href="https://www.linkedin.com/company/bralipo/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/bra.lipo/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} BRALIPO</span><span>{t(lang,'Desde Argentina, para cualquier lugar.','From Argentina, to everywhere.')}</span><a href="#top" data-top>{t(lang,'Volver arriba','Back to top')} ↑</a></div></footer>
+ <script>
+ const toggle=document.querySelector('.menu-toggle');const menu=document.querySelector('#mobile-menu');
+ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+ const services=document.querySelector<HTMLElement>('.services-section');
+ if(services){
+  let visible=false,frame=0;
+  const updateBolt=()=>{frame=0;if(reducedMotion.matches){services.style.removeProperty('--bolt-y');return;}const box=services.getBoundingClientRect();const progress=Math.max(0,Math.min(1,(innerHeight-box.top)/(innerHeight+box.height)));services.style.setProperty('--bolt-y',`${(progress-.5)*100}px`);};
+  const scheduleBolt=()=>{if(visible&&!frame)frame=requestAnimationFrame(updateBolt);};
+  new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;scheduleBolt();}).observe(services);
+  window.addEventListener('scroll',scheduleBolt,{passive:true});window.addEventListener('resize',scheduleBolt);reducedMotion.addEventListener('change',updateBolt);
+ }
+ const entranceAnimations=new Set<Animation>();
+ const revealObserver=new IntersectionObserver(entries=>{
+  let sequence=0;
+  for(const entry of entries){
+   if(!entry.isIntersecting)continue;
+   revealObserver.unobserve(entry.target);
+   if(reducedMotion.matches)continue;
+   const animation=entry.target.animate(
+    [{opacity:.12,transform:'translateY(28px)'},{opacity:1,transform:'translateY(0)'}],
+    {duration:850,delay:Math.min(sequence++*85,255),easing:'cubic-bezier(.2,.75,.25,1)',fill:'backwards'}
+   );
+   entranceAnimations.add(animation);
+   animation.onfinish=animation.oncancel=()=>entranceAnimations.delete(animation);
+  }
+ },{threshold:.12,rootMargin:'0px 0px -24px 0px'});
+ document.querySelectorAll('.section-heading,.work-card,.service-row,.process-grid>div,.service-intro>h2,.service-intro>p,.studio-section>.eyebrow,.studio-section>h1,.studio-section .detail-grid>div>h2,.studio-section .detail-grid>div>p,.studio-section .detail-grid>div>.text-link,.studio-pass,.listing-section>h1,.listing-section>.intro-text,.contact-band>div').forEach(el=>revealObserver.observe(el));
+ reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)entranceAnimations.forEach(animation=>animation.cancel());});
+ function closeMenu(){toggle?.setAttribute('aria-expanded','false');if(menu)menu.hidden=true;}
+ toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));if(menu)menu.hidden=!open;});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();toggle?.focus();}});
+ matchMedia('(min-width: 901px)').addEventListener('change',closeMenu);
+ document.querySelector('[data-top]')?.addEventListener('click',event=>{event.preventDefault();window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
+ document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+  const filter=button.getAttribute('data-filter');document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  document.querySelectorAll('[data-category]').forEach(card=>{card.hidden=filter!=='all'&&card.getAttribute('data-category')!==filter;});
+ }));
+ const form=document.querySelector('[data-contact-form]');
+ form?.addEventListener('submit',async event=>{
+  event.preventDefault();const status=form.querySelector('.form-status');const button=form.querySelector('button[type=submit]');const es=form.getAttribute('data-lang')==='es';
+  if(form.getAttribute('data-enabled')!=='true'||['localhost','127.0.0.1'].includes(location.hostname)){status.textContent=es?'Esta vista previa no envía mensajes. Escribinos a bralipo2@gmail.com.':'This preview does not send messages. Email bralipo2@gmail.com.';return;}
+  button.disabled=true;form.setAttribute('aria-busy','true');status.textContent=es?'Enviando…':'Sending…';
+  try{const response=await fetch(form.getAttribute('data-submit-path')||location.pathname,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()});if(!response.ok)throw new Error('delivery');status.textContent=es?'Recibimos tu consulta. Gracias por escribirnos.':'Your inquiry was received. Thanks for getting in touch.';form.reset();}catch{status.textContent=es?'No pudimos enviar tu consulta. Intentá nuevamente o escribinos por email.':'We could not send your inquiry. Please try again or email us.';}finally{button.disabled=false;form.removeAttribute('aria-busy');}
+ });
+ </script>
+</body>
+</html>

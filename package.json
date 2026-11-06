@@ -1,0 +1,28 @@
+{
+  "name": "bralipo-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/astro.mjs dev --host 127.0.0.1",
+    "build": "node scripts/astro.mjs build",
+    "preview": "node scripts/astro.mjs preview --host 127.0.0.1",
+    "cms": "decap-server",
+    "check": "node scripts/verify.mjs",
+    "predev": "node scripts/prepare.mjs",
+    "prebuild": "node scripts/prepare.mjs",
+    "postbuild": "node scripts/configure-deploy.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.6",
+    "@astrojs/react": "7.1.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "0.187.0",
+    "gsap": "^3.14.0",
+    "decap-cms": "^3.9.0"
+  },
+  "devDependencies": {
+    "decap-server": "^3.4.0"
+  }
+}

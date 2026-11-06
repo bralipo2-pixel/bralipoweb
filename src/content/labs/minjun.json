@@ -1,0 +1,6 @@
+{
+  "slug": "minjun", "title": "_notminjun", "category": "influencers", "published": true, "demo": false, "featured": true, "order": 3, "status": "live",
+  "cover": "/images/minjun.svg", "gallery": [], "external": "https://www.instagram.com/_notminjun/",
+  "es": {"summary": "Otra identidad para explorar la creación con IA.", "description": "Un influencer virtual desarrollado como proyecto propio de Bralipo. Una exploración de personajes y contenido creados con inteligencia artificial.", "scope": "Personaje virtual · Contenido con IA", "role": "Proyecto propio de Bralipo", "alt": "Portada tipográfica de _notminjun; no representa el aspecto del personaje", "seoTitle": "_notminjun — Influencer virtual", "seoDescription": "Explorá _notminjun, un proyecto de influencer virtual creado con IA en Bralipo Labs."},
+  "en": {"summary": "Another identity exploring what AI can create.", "description": "A virtual influencer developed as an independent Bralipo project. An exploration of characters and content created with artificial intelligence.", "scope": "Virtual character · AI content", "role": "Independent Bralipo project", "alt": "Typographic cover for _notminjun; not a depiction of the character", "seoTitle": "_notminjun — Virtual influencer", "seoDescription": "Explore _notminjun, an AI virtual influencer project from Bralipo Labs."}
+}

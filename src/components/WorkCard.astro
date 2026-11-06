@@ -1,0 +1,16 @@
+---
+import {entryHref,t} from '../data.js';
+import LabTiltCover from './LabTiltCover';
+const {entry,lang,type='projects',heading='h3'}=Astro.props;
+const Heading=heading;
+const c=entry[lang];
+---
+<article class:list={['work-card',type==='labs'&&'lab-card']} data-category={entry.category}>
+ {type==='labs'?<LabTiltCover src={entry.cover} alt={c.alt} url={entryHref(lang,type,entry.slug)} label={`${t(lang,'Conocer','Explore')} ${entry.title}`} client:visible/>:<a href={entryHref(lang,type,entry.slug)} class="work-image">
+  <img src={entry.cover} alt={c.alt} width="1200" height="900" loading="lazy" decoding="async" />
+  {entry.demo&&<span class="demo-label">{t(lang,'Vista de prueba','Preview sample')}</span>}
+  <span class="card-arrow" aria-hidden="true">↗</span>
+ </a>}
+ <div class="work-meta"><Heading><a href={entryHref(lang,type,entry.slug)}>{entry.title}</a></Heading><span>{c.scope}</span></div>
+ {type==='labs'&&<p>{c.summary}</p>}
+</article>

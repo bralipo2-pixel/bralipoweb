@@ -1,0 +1,18 @@
+.project-stack .scroll-stack__inner{padding-inline:0}
+.project-stack .project-stack-card{height:clamp(340px,68svh,760px);padding:0;overflow:hidden;border-radius:18px;background:#1e1e1e;color:#f9f9f9}
+.project-stack-project,.project-stack-link{display:flex;flex-direction:column;height:100%;min-height:0}
+.project-stack-cover{position:relative;flex:1;min-height:0;overflow:hidden;background:#deded5}
+.project-stack-cover img{width:100%;height:100%;object-fit:cover;object-position:center}
+.project-stack-caption{display:flex;align-items:center;gap:24px;padding:22px 30px;flex-shrink:0}
+.project-stack-number{font-family:Hubot,sans-serif;font-size:13px;color:#8cff2e;align-self:flex-start;padding-top:5px}
+.project-stack-caption h3{font-size:clamp(26px,3vw,40px);font-weight:600}
+.project-stack-caption p{margin:7px 0 0;font-size:11px;color:#b7b7b0}
+.project-stack-cta{margin-left:auto;display:flex;align-items:center;gap:24px;font-size:12px;white-space:nowrap}
+.project-stack-cta>span{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff40;border-radius:50%;font-size:25px;transition:background .2s,color .2s}
+.project-stack-link:hover .project-stack-cta>span{background:#8cff2e;color:#1e1e1e;border-color:#8cff2e}
+.project-stack-link:focus-visible{outline-offset:-5px;outline-color:#8cff2e}
+.project-stack .scroll-stack__slot:focus-within{z-index:100!important}
+.project-stack-static{display:grid;gap:32px}
+.work-section-footer{display:flex;justify-content:center;margin-top:36px;position:relative}
+@media(max-width:600px){.project-stack .project-stack-card{height:clamp(320px,58svh,520px);border-radius:12px}.project-stack-caption{gap:14px;padding:18px}.project-stack-number{display:none}.project-stack-caption h3{font-size:27px}.project-stack-caption p{font-size:9px;max-width:190px}.project-stack-cta{font-size:0;gap:0}.project-stack-cta>span{width:38px;height:38px;font-size:23px}}
+@media(prefers-reduced-motion:reduce){.project-stack .scroll-stack__slot{position:relative;top:auto!important}.project-stack .project-stack-card{transform:none!important;filter:none!important}.project-stack .scroll-stack-card__shade{display:none}}

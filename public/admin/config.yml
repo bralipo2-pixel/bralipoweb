@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: bralipo2-pixel/bralipoweb
+  branch: main
+local_backend:
+  url: http://localhost:8081/api/v1
+locale: es
+publish_mode: editorial_workflow
+media_folder: public/images/uploads
+public_folder: /images/uploads
+logo_url: /images/isologoblack.png
+slug:
+  encoding: ascii
+  clean_accents: true
+collections:
+  - name: projects
+    label: Proyectos
+    label_singular: Proyecto
+    folder: src/content/projects
+    create: true
+    format: json
+    extension: json
+    slug: '{{fields.slug}}'
+    summary: '{{title}}'
+    preview_path: 'es/proyectos/{{slug}}/'
+    fields: &entry_fields
+      - {label: Nombre, name: title, widget: string}
+      - {label: URL permanente, name: slug, widget: string, hint: 'Usá letras minúsculas, números y guiones. No cambiar después de publicar sin crear una redirección.', pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Solo letras minúsculas, números y guiones.']}
+      - {label: Categoría, name: category, widget: select, options: [branding, web, apps, influencers]}
+      - {label: Publicado, name: published, widget: boolean, default: false}
+      - {label: Fecha de publicación, name: date, widget: datetime, default: '{{now}}', hint: 'El inicio muestra los cuatro proyectos publicados con fecha más reciente.'}
+      - {label: Contenido de prueba, name: demo, widget: boolean, default: false, hint: 'Los ejemplos se excluyen de la versión indexable.'}
+      - {label: Destacado, name: featured, widget: boolean, default: true}
+      - {label: Orden, name: order, widget: number, default: 10, value_type: int, min: 0}
+      - {label: Estado, name: status, widget: select, options: [experiment, prototype, live], default: experiment, required: false}
+      - {label: Portada, name: cover, widget: image}
+      - {label: Enlace externo, name: external, widget: string, required: false, pattern: ['^https://', 'Usá un enlace HTTPS.']}
+      - label: Español
+        name: es
+        widget: object
+        fields: &localized_fields
+          - {label: Resumen, name: summary, widget: text}
+          - {label: Descripción del caso, name: description, widget: text, hint: 'Separá párrafos con una línea en blanco.'}
+          - {label: Servicios o áreas, name: scope, widget: string}
+          - {label: Tu participación y colaboradores, name: role, widget: text}
+          - {label: Descripción accesible de la portada, name: alt, widget: string}
+          - {label: Título SEO, name: seoTitle, widget: string, hint: 'Nombre y enfoque del caso. Bralipo se agrega automáticamente.'}
+          - {label: Descripción SEO, name: seoDescription, widget: text}
+      - label: English
+        name: en
+        widget: object
+        fields: *localized_fields
+      - label: Galería
+        name: gallery
+        widget: list
+        required: false
+        fields:
+          - {label: Imagen, name: image, widget: image}
+          - label: Español
+            name: es
+            widget: object
+            fields: &gallery_fields
+              - {label: Texto alternativo, name: alt, widget: string}
+              - {label: Pie de imagen, name: caption, widget: string, required: false}
+          - label: English
+            name: en
+            widget: object
+            fields: *gallery_fields
+  - name: labs
+    label: Labs
+    label_singular: Exploración
+    folder: src/content/labs
+    create: true
+    format: json
+    extension: json
+    slug: '{{fields.slug}}'
+    summary: '{{title}}'
+    preview_path: 'es/labs/{{slug}}/'
+    fields: *entry_fields

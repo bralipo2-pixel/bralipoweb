@@ -1,0 +1,55 @@
+{
+  "demo": false,
+  "en": {
+    "summary": "ret",
+    "description": "hn",
+    "scope": "sdf",
+    "role": "sdf",
+    "alt": "oiuuy",
+    "seoTitle": "ecc",
+    "seoDescription": "wef43"
+  },
+  "slug": "rojo",
+  "external": "",
+  "featured": true,
+  "es": {
+    "summary": "sdc",
+    "description": "sdcdsv",
+    "scope": "sdcvvfe",
+    "role": "efvds",
+    "alt": "sdv",
+    "seoTitle": "sdid",
+    "seoDescription": "iueuifd"
+  },
+  "published": true,
+  "order": 10,
+  "date": "2026-11-05T18:43:00.000-03:00",
+  "gallery": [
+    {
+      "image": "/images/uploads/cartel.jpg",
+      "es": {
+        "alt": "jg",
+        "caption": "dfv"
+      },
+      "en": {
+        "alt": "dvr",
+        "caption": "sdc"
+      }
+    },
+    {
+      "image": "/images/uploads/combining_styles_in_photo_2k_20261011071756.jpg",
+      "es": {
+        "alt": "xcv",
+        "caption": "xcvb"
+      },
+      "en": {
+        "alt": "fd",
+        "caption": " vcx"
+      }
+    }
+  ],
+  "status": "experiment",
+  "cover": "/images/uploads/postersmockup.png",
+  "title": "Rojo Agencia",
+  "category": "branding"
+}
