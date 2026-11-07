@@ -1,29 +1,85 @@
 {
-  "demo": true,
+  "demo": false,
   "en": {
-    "summary": "A digital space for a different perspective.",
-    "description": "A sample layout for a web project. Images and details are placeholders that can be replaced in Decap.",
-    "scope": "Web design · Development",
-    "role": "Demonstration content",
-    "alt": "Black and white editorial composition; demonstration image",
-    "seoTitle": "Objeto — demo project",
-    "seoDescription": "A sample web case study for the Bralipo preview."
+    "summary": "Brand identity and website design for a playful brand.",
+    "description": "The Crunchill project brings branding and web development into one experience. Its logo, colors and typography work together to express the brand’s personality.\n\nThe website carries that visual language into a responsive digital experience with clear navigation.",
+    "scope": "Branding · Visual identity · Web design and development",
+    "role": "Visual identity design and web development.",
+    "alt": "White Crunchill wordmark with a purple symbol on a dark blue background.",
+    "seoTitle": "Crunchill: Branding and Web Design",
+    "seoDescription": "Explore Crunchill’s visual identity and responsive website, bringing brand design and digital presence together."
   },
-  "slug": "objeto",
+  "slug": "crunchill",
   "featured": true,
   "es": {
-    "summary": "Un espacio digital para mirar diferente.",
-    "description": "Ejemplo de composición para un proyecto web. Las imágenes y los detalles son de prueba y se pueden reemplazar desde Decap.",
-    "scope": "Diseño web · Desarrollo",
-    "role": "Contenido de demostración",
-    "alt": "Composición editorial blanco y negro; imagen de demostración",
-    "seoTitle": "Objeto — demostración de proyecto",
-    "seoDescription": "Ejemplo de caso web para la vista previa de Bralipo."
+    "summary": "Identidad visual y diseño web para una marca con personalidad lúdica.",
+    "description": "El proyecto de Crunchill conecta branding y desarrollo web en una misma experiencia. La identidad reúne logotipo, colores y tipografías para expresar el carácter de la marca.\n\nEl sitio adapta ese lenguaje al entorno digital con un diseño responsive y una navegación clara.",
+    "scope": "Branding · Identidad visual · Diseño y desarrollo web",
+    "role": "Diseño de identidad visual y desarrollo web.",
+    "alt": "Logotipo de Crunchill en blanco con símbolo violeta sobre fondo azul oscuro.",
+    "seoTitle": "Crunchill: branding y diseño web",
+    "seoDescription": "Conocé el proyecto de Crunchill: identidad visual y diseño web responsive para conectar la marca con su presencia digital."
   },
   "published": true,
   "order": 2,
   "date": "2026-11-05T18:19:00.000-03:00",
-  "gallery": [],
+  "gallery": [
+    {
+      "image": "https://framerusercontent.com/images/5pUbHEVk78xGLHnoacVhy8FwaKk.png?width=2048&height=1366",
+      "es": {
+        "alt": "Logo",
+        "caption": "Logo"
+      },
+      "en": {
+        "alt": "Logo",
+        "caption": "Logo"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/P8mtaklhSwtlA32CVqZFOa2auCI.png?scale-down-to=1024&width=2048&height=1366",
+      "es": {
+        "alt": "Web Phone MockUp",
+        "caption": "Web Phone MockUp"
+      },
+      "en": {
+        "alt": "Web Phone MockUp",
+        "caption": "Web Phone MockUp"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/gL0wpLFoJKS12HSCN05qrG30tmA.png?scale-down-to=1024&width=2048&height=1366",
+      "es": {
+        "alt": "Notebook MockUp",
+        "caption": "Notebook MockUp"
+      },
+      "en": {
+        "alt": "Notebook MockUp",
+        "caption": "Notebook MockUp"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/rQ3IOF985qwuqE2QQoEPvf3HSjY.png?scale-down-to=1024&width=2048&height=1366",
+      "es": {
+        "alt": "WebSite captura",
+        "caption": "WebSite captura"
+      },
+      "en": {
+        "alt": "WebSite screenshot",
+        "caption": "WebSite screenshot"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/HFbxQRv1lBhF06X5btelbCIcWtU.png?scale-down-to=1024&width=2048&height=1366",
+      "es": {
+        "alt": "logo ",
+        "caption": "logo"
+      },
+      "en": {
+        "alt": "logo",
+        "caption": "logo"
+      }
+    }
+  ],
   "cover": "/images/uploads/e0rsga0hiexlubl5i3ilvl6zg0.webp",
   "title": "Crunchill",
   "category": "web"
