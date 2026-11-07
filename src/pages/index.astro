@@ -1,3 +1,17 @@
----
-return Astro.redirect('/es/');
----
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Bralipo</title>
+    <style>body{background:#1e1e1e;color:#f9f9f9;font-family:sans-serif}a{color:#8cff2e}</style>
+    <!-- Local preview fallback. Netlify selects the language before serving HTML. -->
+    <script is:inline>
+      const savedLanguage = document.cookie.match(/(?:^|;\s*)nf_lang=(es|en)(?:;|$)/)?.[1];
+      const language = savedLanguage || (navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en');
+      location.replace('/' + language + '/' + location.search + location.hash);
+    </script>
+  </head>
+  <body><noscript><a href="/es/">Español</a> / <a href="/en/">English</a></noscript></body>
+</html>

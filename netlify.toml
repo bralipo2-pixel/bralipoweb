@@ -14,6 +14,29 @@ PUBLIC_FORM_ENABLED = "true"
 from = "/"
 to = "/es/"
 status = 302
+force = true
+conditions = { Language = ["es"] }
+
+[[redirects]]
+from = "/"
+to = "/en/"
+status = 302
+force = true
+conditions = { Language = ["en"] }
+
+# Country is a fallback when the preferred language is neither Spanish nor English.
+[[redirects]]
+from = "/"
+to = "/es/"
+status = 302
+force = true
+conditions = { Country = ["AR", "BO", "CL", "CO", "CR", "CU", "DO", "EC", "ES", "GQ", "GT", "HN", "MX", "NI", "PA", "PE", "PR", "PY", "SV", "UY", "VE"] }
+
+[[redirects]]
+from = "/"
+to = "/en/"
+status = 302
+force = true
 
 [[headers]]
 for = "/fonts/*"

@@ -46,6 +46,10 @@ Incluye honeypot, validación nativa, mensajes de error y páginas de agradecimi
 
 Sin dominio comprado, `URL` de Netlify sirve como dirección principal. Cuando esté comprado y conectado, definir `SITE_URL=https://dominio-final` y volver a desplegar.
 
+Para `bralipo.com`: agregar el dominio al mismo sitio en Netlify, configurar los DNS indicados en Domain management, elegir el dominio principal y verificar HTTPS. Definir `SITE_URL=https://bralipo.com` y redesplegar; comprobar URLs canónicas, sitemap, entrada al CMS y formulario. Revisar que los dominios alternativos redirijan al principal conservando las rutas.
+
+La entrada `/` usa redirecciones 302 forzadas en Netlify, sin página intermedia: primero el idioma preferido español/inglés; para otros idiomas, país hispanohablante → español, resto → inglés. El selector ES/EN guarda `nf_lang` durante un año para priorizar la elección del visitante. Las rutas explícitas `/es/` y `/en/` siempre se respetan. En desarrollo local, el fallback usa el idioma del navegador (no hay geolocalización del CDN).
+
 Antes de cambiar `PUBLIC_INDEXABLE` a `true` en el contexto de producción:
 
 - Revisar o despublicar **Prueba de IA** (`prueba1`), cuyos textos siguen siendo pruebas.

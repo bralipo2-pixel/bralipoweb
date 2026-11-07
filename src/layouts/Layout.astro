@@ -33,6 +33,10 @@ const isHome=Astro.url.pathname===href(lang,'home')||Astro.url.pathname===href(l
  <main id="main" tabindex="-1"><slot/></main>
  <footer class="footer"><a href={href(lang,'home')} class="logo"><img src="/images/logowhite.png" width="534" height="122" alt="BRALIPO" loading="lazy"/></a><p>{t(lang,'Diseño con intención. Tecnología con propósito.','Design with intent. Technology with purpose.')}</p><div><a href="mailto:bralipo2@gmail.com">Email <Icon name="arrow-up-right"/></a><a href="https://www.linkedin.com/company/bralipo/" target="_blank" rel="noopener noreferrer">LinkedIn <Icon name="arrow-up-right"/></a><a href="https://www.instagram.com/bra.lipo/" target="_blank" rel="noopener noreferrer">Instagram <Icon name="arrow-up-right"/></a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} BRALIPO</span><span>{t(lang,'Desde Argentina, para cualquier lugar.','From Argentina, to everywhere.')}</span><a href="#top" data-top>{t(lang,'Volver arriba','Back to top')} <Icon name="arrow-up"/></a></div></footer>
  <script>
+ document.querySelector<HTMLAnchorElement>('.language')?.addEventListener('click',event=>{
+  const language=(event.currentTarget as HTMLAnchorElement).getAttribute('lang');
+  if(language==='es'||language==='en')document.cookie=`nf_lang=${language}; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
+ });
  const toggle=document.querySelector('.menu-toggle');const menu=document.querySelector('#mobile-menu');
  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
  const services=document.querySelector<HTMLElement>('.services-section');
