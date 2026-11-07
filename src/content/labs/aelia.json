@@ -1,6 +1,47 @@
 {
-  "slug": "aelia", "title": "aelia.afterdark", "category": "influencers", "published": true, "demo": false, "featured": true, "order": 2, "status": "live",
-  "cover": "/images/aelia.svg", "gallery": [], "external": "https://www.instagram.com/aelia.afterdark/",
-  "es": {"summary": "Un personaje virtual creado con inteligencia artificial.", "description": "Un proyecto propio de Bralipo que explora la creación de influencers virtuales y contenido para redes. Conocé el personaje y sus publicaciones en Instagram.", "scope": "Personaje virtual · Contenido con IA", "role": "Proyecto propio de Bralipo", "alt": "Portada tipográfica de aelia.afterdark; no representa el aspecto del personaje", "seoTitle": "aelia.afterdark — Influencer virtual", "seoDescription": "Conocé aelia.afterdark, un personaje virtual creado con inteligencia artificial por Bralipo."},
-  "en": {"summary": "A virtual character created with artificial intelligence.", "description": "An independent Bralipo project exploring virtual influencers and social media content. Discover the character and their posts on Instagram.", "scope": "Virtual character · AI content", "role": "Independent Bralipo project", "alt": "Typographic cover for aelia.afterdark; not a depiction of the character", "seoTitle": "aelia.afterdark — Virtual influencer", "seoDescription": "Meet aelia.afterdark, a virtual character created with artificial intelligence by Bralipo."}
+  "demo": false,
+  "blocks": [
+    {
+      "type": "video",
+      "format": "horizontal",
+      "url": "https://www.youtube.com/watch?v=jdQvakkSqiA",
+      "es": {
+        "title": " Monster In Me - AELIA Song",
+        "caption": "Creamos esta cancion hecha totalmente con inteligencia artificial"
+      },
+      "en": {
+        "title": " Monster In Me - AELIA Song",
+        "caption": "Creamos esta cancion hecha totalmente con inteligencia artificial"
+      }
+    }
+  ],
+  "en": {
+    "summary": "A virtual character created with artificial intelligence.",
+    "description": "An independent Bralipo project exploring virtual influencers and social media content. Discover the character and their posts on Instagram.",
+    "scope": "Virtual character · AI content",
+    "role": "Independent Bralipo project",
+    "alt": "Typographic cover for aelia.afterdark; not a depiction of the character",
+    "seoTitle": "aelia.afterdark — Virtual influencer",
+    "seoDescription": "Meet aelia.afterdark, a virtual character created with artificial intelligence by Bralipo."
+  },
+  "slug": "aelia",
+  "external": "https://www.instagram.com/aelia.afterdark/",
+  "featured": true,
+  "es": {
+    "summary": "Un personaje virtual creado con inteligencia artificial.",
+    "description": "Un proyecto propio de Bralipo que explora la creación de influencers virtuales y contenido para redes. Conocé el personaje y sus publicaciones en Instagram.",
+    "scope": "Personaje virtual · Contenido con IA",
+    "role": "Proyecto propio de Bralipo",
+    "alt": "Portada tipográfica de aelia.afterdark; no representa el aspecto del personaje",
+    "seoTitle": "aelia.afterdark — Influencer virtual",
+    "seoDescription": "Conocé aelia.afterdark, un personaje virtual creado con inteligencia artificial por Bralipo."
+  },
+  "published": true,
+  "order": 2,
+  "date": "2026-11-07T14:24:00.000-03:00",
+  "gallery": [],
+  "status": "live",
+  "cover": "/images/aelia.svg",
+  "title": "aelia.afterdark",
+  "category": "influencers"
 }
