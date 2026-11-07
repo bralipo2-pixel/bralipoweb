@@ -1,25 +1,25 @@
 {
   "demo": false,
   "en": {
-    "summary": "ret",
-    "description": "hn",
-    "scope": "sdf",
-    "role": "sdf",
-    "alt": "oiuuy",
-    "seoTitle": "ecc",
-    "seoDescription": "wef43"
+    "summary": "A bold, high-contrast identity for a creative agency.",
+    "description": "Rojo Agencia’s identity centers on communicating energy with clarity. A geometric wordmark, a distinctive symbol and a prominent red palette create a recognizable visual language.\n\nThe system includes layouts for social media and presentations, alongside applications across physical formats.",
+    "scope": "Branding · Visual identity · Art direction",
+    "role": "Visual identity design and brand applications.",
+    "alt": "Rojo Agencia posters featuring monochrome photographs, red lettering and green details on a wall.",
+    "seoTitle": "Rojo Agencia: Branding and Visual Identity",
+    "seoDescription": "Explore Rojo Agencia’s logo, visual system and brand applications, designed to express a creative agency’s energy."
   },
   "slug": "rojo",
   "external": "",
   "featured": true,
   "es": {
-    "summary": "sdc",
-    "description": "sdcdsv",
-    "scope": "sdcvvfe",
-    "role": "efvds",
-    "alt": "sdv",
-    "seoTitle": "sdid",
-    "seoDescription": "iueuifd"
+    "summary": "Una identidad de alto contraste para una agencia creativa con carácter.",
+    "description": "La identidad de Rojo Agencia parte de una idea: comunicar energía con claridad. El logotipo geométrico, el símbolo propio y el protagonismo del rojo construyen un lenguaje reconocible.\n\nEl sistema contempla composiciones para redes y presentaciones, además de aplicaciones en soportes físicos.",
+    "scope": "Branding · Identidad visual · Dirección de arte",
+    "role": "Diseño de identidad visual y aplicaciones de marca.",
+    "alt": "Afiches de Rojo Agencia con fotografías en blanco y negro, letras rojas y detalles verdes sobre una pared.",
+    "seoTitle": "Rojo Agencia: branding e identidad visual",
+    "seoDescription": "Branding para Rojo Agencia: logotipo, sistema gráfico y aplicaciones que expresan la energía de una agencia creativa."
   },
   "published": true,
   "order": 10,
@@ -48,7 +48,7 @@
       }
     }
   ],
-  "status": "experiment",
+  "status": null,
   "cover": "/images/uploads/presenting1.png",
   "title": "Rojo Agencia",
   "category": "branding"
