@@ -1,0 +1,30 @@
+---
+import { youtubeId } from '../lib/youtube.js';
+const { blocks = [], lang = 'es' } = Astro.props;
+---
+{blocks.length > 0 && <div class="section case-blocks">
+  {blocks.map(block => {
+    const copy = block[lang] || {};
+    const id = block.type === 'video' ? youtubeId(block.url) : null;
+    return block.type === 'text' ? <section class="text-block">
+      {copy.title && <h2>{copy.title}</h2>}
+      {(copy.body || '').split(/\n\s*\n/).filter(Boolean).map(paragraph => <p>{paragraph}</p>)}
+    </section> : id && <figure class:list={['video-block', { vertical: block.format === 'vertical' }]}>
+      <iframe src={`https://www.youtube-nocookie.com/embed/${id}?rel=0`} title={copy.title || (lang === 'es' ? 'Video del proyecto' : 'Project video')} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <figcaption>{copy.title}{copy.caption && <p>{copy.caption}</p>}<a href={`https://www.youtube.com/watch?v=${id}`} target="_blank" rel="noopener noreferrer">{lang === 'es' ? 'Ver en YouTube' : 'Watch on YouTube'}</a></figcaption>
+    </figure>;
+  })}
+</div>}
+<style>
+  .case-blocks{display:grid;gap:64px}
+  .text-block{max-width:800px;width:100%;justify-self:center}
+  .text-block h2{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:24px}
+  .text-block p{white-space:pre-line;line-height:1.8;margin:0 0 20px;overflow-wrap:anywhere}
+  .video-block{width:100%;margin:0}
+  .video-block.vertical{max-width:420px;justify-self:center}
+  iframe{display:block;width:100%;aspect-ratio:16/9;min-height:200px;border:0;border-radius:16px;background:#111}
+  .vertical iframe{aspect-ratio:9/16}
+  figcaption{padding-top:16px;line-height:1.6}
+  figcaption p{margin:8px 0}
+  figcaption a{display:block;text-decoration:underline;font-size:.875rem;margin-top:8px}
+</style>
