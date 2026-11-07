@@ -1,29 +1,74 @@
 {
-  "demo": true,
+  "demo": false,
   "en": {
-    "summary": "An identity that finds its own shape.",
-    "description": "A visual example of a brand identity case study. Replace this entry with your own work in the CMS.",
-    "scope": "Visual identity · Art direction",
-    "role": "Demonstration content",
-    "alt": "Orange and cream abstract composition; demonstration image",
-    "seoTitle": "Forma — demo project",
-    "seoDescription": "A sample project presentation for the Bralipo preview."
+    "summary": "An identity for an Argentine accessories brand built around change.",
+    "description": "Ryūkō takes a minimalist approach to handbags and backpacks. Its identity expresses transformation through a serif wordmark and a flowing symbol.\n\nThe visual system extends to packaging, shopping bags and signage, supported by art direction for product photography.",
+    "scope": "Branding · Art direction · Social media",
+    "role": "Visual identity design and art direction.",
+    "alt": "Black Ryūkō sign with a white wordmark and flowing symbol mounted on a concrete wall.",
+    "seoTitle": "Ryūkō: Accessories Brand Identity",
+    "seoDescription": "Discover Ryūkō’s brand identity, packaging and art direction for an Argentine handbag and backpack brand."
   },
-  "slug": "forma",
+  "slug": "ryuko",
   "featured": true,
   "es": {
-    "summary": "Una identidad que encuentra su propia forma.",
-    "description": "Ejemplo visual para explorar la presentación de un proyecto de identidad. Podés reemplazar las imágenes y los textos de esta entrada desde el CMS.",
-    "scope": "Identidad visual · Dirección de arte",
-    "role": "Contenido de demostración",
-    "alt": "Composición abstracta naranja y crema; imagen de demostración",
-    "seoTitle": "Forma — demostración de proyecto",
-    "seoDescription": "Ejemplo de presentación de proyecto para la vista previa de Bralipo."
+    "summary": "Una identidad para una marca argentina de accesorios que entiende el cambio como parte de su esencia.",
+    "description": "Ryūkō propone una mirada minimalista sobre bolsos y mochilas. Su identidad traduce la transformación en un logotipo serif y un símbolo ondulado.\n\nEl sistema visual se extiende a packaging, bolsas y señalética, con dirección de arte para fotografía de producto.",
+    "scope": "Branding · Dirección de arte · Social media",
+    "role": "Diseño de identidad visual y dirección de arte.",
+    "alt": "Cartel negro de Ryūkō con logotipo blanco y símbolo ondulado sobre una pared de hormigón.",
+    "seoTitle": "Ryūkō: branding para una marca de accesorios",
+    "seoDescription": "Identidad visual para Ryūkō: diseño de marca, packaging y dirección de arte para una marca argentina de bolsos y mochilas."
   },
   "published": true,
   "order": 1,
   "date": "2026-11-05T18:09:00.000-03:00",
-  "gallery": [],
+  "gallery": [
+    {
+      "image": "https://framerusercontent.com/images/YvwFoyl7FDypt6Lqnl1EjPD6XPY.jpg?scale-down-to=2048&width=5000&height=3125",
+      "es": {
+        "alt": "Ryuko packaging",
+        "caption": "Ryuko packaging"
+      },
+      "en": {
+        "alt": "Ryuko packaging",
+        "caption": "Ryuko packaging"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/X7VMUAm9AhjLxpxjcdG6OwvMH4.jpg?scale-down-to=1024&width=5000&height=3335",
+      "es": {
+        "alt": "Bolsa",
+        "caption": "Bolsa"
+      },
+      "en": {
+        "alt": "Bag",
+        "caption": "Bag"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/68evMXuOXffedI4eLbto6XgUY.jpg?scale-down-to=1024&width=4000&height=3000",
+      "es": {
+        "alt": "Cartel publicitario",
+        "caption": "Cartel publicitario"
+      },
+      "en": {
+        "alt": "Advertising poster",
+        "caption": "Advertising poster"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/KTTPOvuvRLAvbf5DzR3JFHB3Ak.jpg?scale-down-to=1024&width=2362&height=1653",
+      "es": {
+        "alt": "WebSite mockup",
+        "caption": "WebSite mockup"
+      },
+      "en": {
+        "alt": "WebSite mockup",
+        "caption": "WebSite mockup"
+      }
+    }
+  ],
   "cover": "/images/uploads/cartel.jpg",
   "title": "Ryuko",
   "category": "branding"
