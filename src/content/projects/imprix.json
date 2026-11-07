@@ -1,28 +1,74 @@
 {
   "demo": false,
   "en": {
-    "summary": ".",
-    "description": ".",
-    "scope": ".",
-    "role": ".",
-    "alt": ".",
-    "seoTitle": ".",
-    "seoDescription": "."
+    "summary": "Visual identity and a website for a textile printing brand.",
+    "description": "Imprix combines an urban aesthetic with a versatile graphic system. The wordmark explores ink-inspired shapes, supported by a distinctive symbol and a green, black and white palette.\n\nThe project includes product applications presented through mockups and the creation of the brand’s website.",
+    "scope": "Branding · Art direction · Product mockups · Web design",
+    "role": "Visual identity, product applications and website design.",
+    "alt": "Natural-colored tote bag displaying Imprix’s green and black branding, resting on grass.",
+    "seoTitle": "Imprix: Textile Printing Brand and Web Design",
+    "seoDescription": "Explore Imprix’s visual identity, product mockups and website, created for a textile printing business."
   },
   "slug": "imprix",
   "featured": true,
   "es": {
-    "summary": ".",
-    "description": ".",
-    "scope": ".",
-    "role": ".",
-    "alt": ".",
-    "seoTitle": ".",
-    "seoDescription": "."
+    "summary": "Identidad visual y sitio web para una marca de estampados textiles.",
+    "description": "Imprix combina una estética urbana con un sistema gráfico versátil. El logotipo explora formas inspiradas en la tinta, acompañado por un símbolo propio y una paleta de verde, negro y blanco.\n\nEl proyecto incluye aplicaciones en productos mediante mockups y la creación de su sitio web.",
+    "scope": "Branding · Dirección de arte · Mockups · Diseño web",
+    "role": "Diseño de identidad, aplicaciones de producto y sitio web.",
+    "alt": "Bolsa de tela color natural con la identidad de Imprix en verde y negro, apoyada sobre césped.",
+    "seoTitle": "Imprix: branding y diseño web para estampados",
+    "seoDescription": "Conocé el proyecto de Imprix Estampados: identidad visual, aplicaciones de marca y sitio web para un negocio de estampados textiles."
   },
   "published": true,
   "order": 10,
   "date": "2026-11-05T18:27:00.000-03:00",
+  "gallery": [
+    {
+      "image": "/images/uploads/oversize-t-shirt-mockup.jpg",
+      "es": {
+        "alt": "MockUp",
+        "caption": "MockUp"
+      },
+      "en": {
+        "alt": "MockUp",
+        "caption": "MockUp"
+      }
+    },
+    {
+      "image": "/images/uploads/ventobrand.jpg",
+      "es": {
+        "alt": "Bento Brand",
+        "caption": "Bento Brand"
+      },
+      "en": {
+        "alt": "Bento Brand",
+        "caption": "Bento Brand"
+      }
+    },
+    {
+      "image": "/images/uploads/billboard-imprix.jpg",
+      "es": {
+        "alt": "Cartel de Imprix",
+        "caption": "Cartel de Imprix"
+      },
+      "en": {
+        "alt": "Billiboard Imprix",
+        "caption": "Billiboard Imprix"
+      }
+    },
+    {
+      "image": "/images/uploads/profile.jpg",
+      "es": {
+        "alt": "Redes sociales mockUp",
+        "caption": "Redes sociales mockUp"
+      },
+      "en": {
+        "alt": "SocialMedia mockUp",
+        "caption": "SocialMedia mockUp"
+      }
+    }
+  ],
   "status": "experiment",
   "cover": "/images/uploads/dropped-tote-bag-on-grass-mockup.jpg",
   "title": "Imprix",
