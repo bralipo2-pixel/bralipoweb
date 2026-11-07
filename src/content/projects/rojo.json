@@ -26,25 +26,58 @@
   "date": "2026-11-05T18:43:00.000-03:00",
   "gallery": [
     {
-      "image": "/images/uploads/cartel.jpg",
+      "image": "/images/uploads/postersmockup.png",
       "es": {
-        "alt": "jg",
-        "caption": "dfv"
+        "alt": "Posters en la calle con el branding de Rojo",
+        "caption": "Mockup de posters en la calle"
       },
       "en": {
-        "alt": "dvr",
-        "caption": "sdc"
+        "alt": "Posters on the street featuring Rojo branding",
+        "caption": "Street poster mockup"
       }
     },
     {
-      "image": "/images/uploads/combining_styles_in_photo_2k_20261011071756.jpg",
+      "image": "https://framerusercontent.com/images/GkLlbcLILR1yRpXzooybUf7OG8c.png?width=1600&height=389",
       "es": {
-        "alt": "xcv",
-        "caption": "xcvb"
+        "alt": "Logotipo e Isotipo de Rojo",
+        "caption": "Logotipo e Isotipo"
       },
       "en": {
-        "alt": "fd",
-        "caption": " vcx"
+        "alt": "Rojo’s Logo and Isotype",
+        "caption": "Logo and Isotype"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/rU4VoubGNun4WDFpZRqEx0gyLQo.png?width=1600&height=522",
+      "es": {
+        "alt": "Colores de marca",
+        "caption": "Colores de marca"
+      },
+      "en": {
+        "alt": "Brand colors",
+        "caption": "Brand colors"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/GkrdCm1wiz7JcsRcyRz3nODekN8.png?width=1600&height=900",
+      "es": {
+        "alt": "Tipografia de Marca",
+        "caption": "Tipografia de Marca"
+      },
+      "en": {
+        "alt": "Brand Typography",
+        "caption": "Brand Typography"
+      }
+    },
+    {
+      "image": "https://framerusercontent.com/images/mTEcOkeBaWhnBzSMeRvtDGEbUME.png?scale-down-to=2048&width=3200&height=4000",
+      "es": {
+        "alt": "MockUp tote bag ",
+        "caption": "MockUp tote bag "
+      },
+      "en": {
+        "alt": "Tote bag mockup",
+        "caption": "Tote bag mockup"
       }
     }
   ],
