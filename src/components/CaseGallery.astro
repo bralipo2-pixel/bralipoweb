@@ -1,0 +1,53 @@
+---
+import Icon from './Icon.jsx';
+const { gallery = [], lang = 'es' } = Astro.props;
+---
+{gallery.length > 0 && <div class="section gallery case-grid">
+  {gallery.map(item => <figure data-size={item.size || 'adjusted'}>
+    <a class="gallery-open" href={item.image} data-gallery-image data-alt={item[lang]?.alt || ''} aria-label={`${lang === 'es' ? 'Ampliar imagen' : 'Enlarge image'}: ${item[lang]?.alt || ''}`}>
+      <img src={item.image} alt={item[lang]?.alt || ''} width="1200" height="900" loading="lazy"/>
+      <span class="gallery-enlarge"><Icon name="plus"/>{lang === 'es' ? 'Ampliar' : 'Enlarge'}</span>
+    </a>
+    {item[lang]?.caption && <figcaption>{item[lang].caption}</figcaption>}
+  </figure>)}
+</div>}
+{gallery.length > 0 && <dialog class="image-lightbox" aria-label={lang === 'es' ? 'Imagen ampliada' : 'Enlarged image'}>
+  <button type="button" class="lightbox-close" aria-label={lang === 'es' ? 'Cerrar imagen' : 'Close image'} autofocus><Icon name="close"/></button>
+  <img class="lightbox-image" alt=""/>
+  <p class="lightbox-caption"></p>
+</dialog>}
+<script>
+const dialog=document.querySelector<HTMLDialogElement>('.image-lightbox');
+if(dialog){
+ const image=dialog.querySelector<HTMLImageElement>('.lightbox-image')!;
+ const caption=dialog.querySelector<HTMLElement>('.lightbox-caption')!;
+ let opener:HTMLAnchorElement|null=null;
+ let previousOverflow='';
+ document.querySelectorAll<HTMLAnchorElement>('[data-gallery-image]').forEach(link=>link.addEventListener('click',event=>{
+  if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+  event.preventDefault();opener=link;
+  image.src=link.href;image.alt=link.dataset.alt||'';caption.textContent=image.alt;
+  previousOverflow=document.body.style.overflow;document.body.style.overflow='hidden';dialog.showModal();
+ }));
+ dialog.querySelector('button')?.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+ dialog.addEventListener('close',()=>{document.body.style.overflow=previousOverflow;image.removeAttribute('src');opener?.focus();});
+}
+</script>
+<style is:global>
+ .gallery.case-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:36px}
+ .case-grid figure[data-size="full"],.case-grid figure:only-child{grid-column:1/-1}
+ .gallery-open{position:relative;display:flex;align-items:center;justify-content:center;background:#252622;border-radius:12px;overflow:hidden;min-height:200px}
+ .case-grid figure:not([data-size="full"]) .gallery-open{height:clamp(260px,42vw,560px)}
+ .case-grid figure[data-size="compact"] .gallery-open{height:320px}
+ .gallery.case-grid figure:not([data-size="full"]) img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+ .gallery-enlarge{position:absolute;bottom:12px;right:12px;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:24px;background:#1e1e1ee6;color:#fff;font-size:12px}
+ .gallery-open:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+ .image-lightbox{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;border:0;padding:64px 20px 24px;background:#121212f5;color:#fff}
+ .image-lightbox[open]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+ .image-lightbox::backdrop{background:#000c}
+ .image-lightbox .lightbox-image{width:auto;height:auto;max-width:100%;max-height:calc(100svh - 160px);object-fit:contain;min-height:0}
+ .lightbox-close{position:absolute;top:16px;right:20px;display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff60;border-radius:50%;background:#222;color:#fff;font-size:24px}
+ .lightbox-caption{max-width:800px;text-align:center;font-size:14px;margin:0;max-height:60px;overflow:auto}
+ @media(max-width:640px){.gallery.case-grid{grid-template-columns:1fr;gap:24px}.case-grid figure:not([data-size="full"]) .gallery-open{height:min(65svh,480px)}.case-grid figure[data-size="compact"] .gallery-open{height:300px}}
+</style>

@@ -34,6 +34,15 @@ collections:
       - {label: Orden, name: order, widget: number, default: 10, value_type: int, min: 0}
       - {label: Estado, name: status, widget: select, options: [experiment, prototype, live], default: experiment, required: false}
       - {label: Portada, name: cover, widget: image}
+      - label: Tamaño de la portada dentro del caso
+        name: coverSize
+        widget: select
+        required: false
+        default: adjusted
+        options: &image_sizes
+          - {label: 'Ajustada (recomendada)', value: adjusted}
+          - {label: Compacta, value: compact}
+          - {label: 'Completa (altura original proporcional)', value: full}
       - {label: Enlace externo, name: external, widget: string, required: false, pattern: ['^https://', 'Usá un enlace HTTPS.']}
       - label: Español
         name: es
@@ -56,6 +65,13 @@ collections:
         required: false
         fields:
           - {label: Imagen, name: image, widget: image}
+          - label: Tamaño en la página
+            name: size
+            widget: select
+            required: false
+            default: adjusted
+            options: *image_sizes
+            hint: 'Ajustada limita la altura; compacta ocupa menos espacio; completa permite imágenes largas. Ninguna recorta la imagen.'
           - label: Español
             name: es
             widget: object
