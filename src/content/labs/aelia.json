@@ -2,6 +2,17 @@
   "demo": false,
   "blocks": [
     {
+      "type": "text",
+      "es": {
+        "title": "Una nueva faceta: la música",
+        "body": "El universo de Aelia también se expresa a través de la música. Su faceta como cantante abre otra forma de desarrollar el personaje, conectando su identidad visual con canciones y contenido audiovisual. Esta selección reúne parte de esa exploración."
+      },
+      "en": {
+        "title": "A new dimension: music",
+        "body": "Aelia’s world also finds expression through music. Her role as a singer opens another way to develop the character, connecting her visual identity with songs and audiovisual content. This selection presents part of that exploration."
+      }
+    },
+    {
       "type": "video",
       "format": "horizontal",
       "url": "https://www.youtube.com/watch?v=jdQvakkSqiA",
