@@ -16,25 +16,25 @@
     }
   ],
   "en": {
-    "summary": "A virtual character created with artificial intelligence.",
-    "description": "An independent Bralipo project exploring virtual influencers and social media content. Discover the character and their posts on Instagram.",
-    "scope": "Virtual character · AI content",
-    "role": "Independent Bralipo project",
-    "alt": "Typographic cover for aelia.afterdark; not a depiction of the character",
-    "seoTitle": "aelia.afterdark — Virtual influencer",
-    "seoDescription": "Meet aelia.afterdark, a virtual character created with artificial intelligence by Bralipo."
+    "summary": "An AI-created virtual influencer and artist bringing fashion, dark fantasy and music into one distinctive identity.",
+    "description": "Aelia After Dark is an AI-created virtual character who brings fantasy into the world of fashion and social media. Her golden eyes, elongated ears and black hair give her a recognizable identity, shaped by gothic influences and an editorial sensibility.\n\nHer world moves between the everyday and the fantastical: a city street at night, a café, a mirror portrait or a composition featuring veils and snakes. Each setting explores a different side of the character while preserving her distinctive features.\n\nThe project brings together character creation, art direction and AI visual content. Clothing, lighting, poses and settings shape an aesthetic that combines contemporary fashion with a dark atmosphere.\n\nAelia is also developing a presence as a singer, extending the project into music and audiovisual content. Within Bralipo Labs, she is an evolving exploration of how a digital character can build an identity through imagery, movement and sound.",
+    "scope": "AI character creation · Art direction · Digital fashion · Visual and audiovisual content",
+    "role": "Creation and development of Aelia After Dark, visual identity development and creative direction of content using artificial intelligence tools.",
+    "alt": "Aelia, a virtual character with golden eyes and elongated ears, wrapped in a white veil with a black snake across her shoulders.",
+    "seoTitle": "Aelia After Dark: AI Virtual Influencer",
+    "seoDescription": "Meet Aelia After Dark, an AI-created virtual influencer and artist. A Bralipo Labs project exploring fashion, dark fantasy and music."
   },
   "slug": "aelia",
   "external": "https://www.instagram.com/aelia.afterdark/",
   "featured": true,
   "es": {
-    "summary": "Un personaje virtual creado con inteligencia artificial.",
-    "description": "Un proyecto propio de Bralipo que explora la creación de influencers virtuales y contenido para redes. Conocé el personaje y sus publicaciones en Instagram.",
-    "scope": "Personaje virtual · Contenido con IA",
-    "role": "Proyecto propio de Bralipo",
-    "alt": "Portada tipográfica de aelia.afterdark; no representa el aspecto del personaje",
-    "seoTitle": "aelia.afterdark — Influencer virtual",
-    "seoDescription": "Conocé aelia.afterdark, un personaje virtual creado con inteligencia artificial por Bralipo."
+    "summary": "Influencer y artista virtual creada con IA, donde la moda, la fantasía oscura y la música comparten una misma identidad.",
+    "description": "Aelia After Dark es un personaje virtual creado con inteligencia artificial que lleva la fantasía al lenguaje de la moda y las redes sociales. Sus ojos dorados, orejas alargadas y cabello negro construyen una identidad reconocible, con influencias góticas y una sensibilidad editorial.\n\nSu universo se mueve entre lo cotidiano y lo fantástico: una escena nocturna en la ciudad, un café, una fotografía frente al espejo o una composición con velos y serpientes. Cada contexto permite explorar distintas facetas del personaje sin perder los rasgos que la hacen reconocible.\n\nEl proyecto reúne creación de personajes, dirección de arte y contenido visual con IA. El vestuario, la iluminación, las poses y los escenarios forman parte de una búsqueda estética que combina moda contemporánea con una atmósfera oscura.\n\nAelia también incorpora una faceta como cantante, ampliando su presencia hacia la música y el contenido audiovisual. Dentro de Bralipo Labs, es un proyecto en evolución para explorar cómo un personaje digital puede desarrollar una identidad propia a través de imágenes, movimiento y sonido.",
+    "scope": "Creación de personajes con IA · Dirección de arte · Moda digital · Contenido visual y audiovisual",
+    "role": "Creación y desarrollo de Aelia After Dark, definición de su identidad visual y dirección creativa del contenido con herramientas de inteligencia artificial.",
+    "alt": "Aelia, personaje virtual de ojos dorados y orejas alargadas, envuelta en un velo blanco con una serpiente negra sobre los hombros.",
+    "seoTitle": "Aelia After Dark: influencer virtual creada con IA",
+    "seoDescription": "Conocé a Aelia After Dark, influencer y artista virtual creada con IA. Un proyecto de Bralipo Labs que combina moda, fantasía oscura y música."
   },
   "published": true,
   "order": 2,
