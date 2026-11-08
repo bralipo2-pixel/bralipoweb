@@ -1,5 +1,6 @@
 {
   "demo": false,
+  "blocks": [],
   "en": {
     "summary": "An AI-created virtual lifestyle influencer. A model and barista from Seoul whose world brings together fashion, coffee and everyday moments.",
     "description": "Minjun is an AI-created virtual character imagined as a model and barista from Seoul, South Korea. His identity revolves around lifestyle: the clothes he chooses, his connection to coffee, his workouts and the small moments that shape his day.\n\nHis content draws on the visual language of social media: mirror selfies, café scenes, meals out and skincare routines. The aim is to create an approachable, recognizable presence, with images that feel like moments from a continuous story.\n\nThe project explores character consistency across different settings. His features, styling, gestures and the atmosphere of each scene work together to maintain a coherent identity across still images and video.\n\nWithin Bralipo Labs, Minjun brings together character creation, art direction and AI content. He is an exploration of how to develop a virtual influencer with a distinctive background, interests and visual style.",
@@ -24,7 +25,72 @@
   "published": true,
   "order": 3,
   "date": "2026-11-08T16:34:00.000-03:00",
-  "gallery": [],
+  "gallery": [
+    {
+      "size": "adjusted",
+      "image": "/images/uploads/pon_a_minjun_con_cremas_202609022355.jpeg",
+      "es": {
+        "alt": "MinJun con cremas",
+        "caption": ""
+      },
+      "en": {
+        "alt": "MinJun With creams",
+        "caption": ""
+      }
+    },
+    {
+      "size": "adjusted",
+      "image": "/images/uploads/man_taking_mirror_selfie_202608310714.jpeg",
+      "es": {
+        "alt": "MinJun en el gym",
+        "caption": ""
+      },
+      "en": {
+        "alt": "Minjun at the gym",
+        "caption": ""
+      }
+    },
+    {
+      "size": "adjusted",
+      "image": "/images/uploads/barista_taking_mirror_selfie_202609030023.jpeg",
+      "es": {
+        "alt": "MinJun haciendo cafe"
+      },
+      "en": {
+        "alt": "MinJun making coffee"
+      }
+    },
+    {
+      "size": "adjusted",
+      "image": "/images/uploads/barista_taking_mirror_selfie_202609030018.jpeg",
+      "es": {
+        "alt": "una selfie de MinJun con un delantal en el trabajo"
+      },
+      "en": {
+        "alt": "a selfie of Minjun wearing an apron at work"
+      }
+    },
+    {
+      "size": "adjusted",
+      "image": "/images/uploads/man_replacing_outfit_in_photo_202609020327.jpeg",
+      "es": {
+        "alt": "MinJun en un restaurante sentado"
+      },
+      "en": {
+        "alt": "MinJun sitting in a restaurant"
+      }
+    },
+    {
+      "size": "adjusted",
+      "image": "/images/uploads/man_replacing_outfit_in_photo_202609020313.jpeg",
+      "es": {
+        "alt": "MinJun sonriendo a la camara en un restaurante"
+      },
+      "en": {
+        "alt": "MinJun smiling at the camera in a restaurant"
+      }
+    }
+  ],
   "status": "live",
   "cover": "/images/uploads/man_taking_mirror_selfie_202608310047.jpeg",
   "title": "Minjun",
