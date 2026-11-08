@@ -1,6 +1,32 @@
 {
-  "slug": "minjun", "title": "_notminjun", "category": "influencers", "published": true, "demo": false, "featured": true, "order": 3, "status": "live",
-  "cover": "/images/minjun.svg", "gallery": [], "external": "https://www.instagram.com/_notminjun/",
-  "es": {"summary": "Otra identidad para explorar la creación con IA.", "description": "Un influencer virtual desarrollado como proyecto propio de Bralipo. Una exploración de personajes y contenido creados con inteligencia artificial.", "scope": "Personaje virtual · Contenido con IA", "role": "Proyecto propio de Bralipo", "alt": "Portada tipográfica de _notminjun; no representa el aspecto del personaje", "seoTitle": "_notminjun — Influencer virtual", "seoDescription": "Explorá _notminjun, un proyecto de influencer virtual creado con IA en Bralipo Labs."},
-  "en": {"summary": "Another identity exploring what AI can create.", "description": "A virtual influencer developed as an independent Bralipo project. An exploration of characters and content created with artificial intelligence.", "scope": "Virtual character · AI content", "role": "Independent Bralipo project", "alt": "Typographic cover for _notminjun; not a depiction of the character", "seoTitle": "_notminjun — Virtual influencer", "seoDescription": "Explore _notminjun, an AI virtual influencer project from Bralipo Labs."}
+  "demo": false,
+  "en": {
+    "summary": "An AI-created virtual lifestyle influencer. A model and barista from Seoul whose world brings together fashion, coffee and everyday moments.",
+    "description": "Minjun is an AI-created virtual character imagined as a model and barista from Seoul, South Korea. His identity revolves around lifestyle: the clothes he chooses, his connection to coffee, his workouts and the small moments that shape his day.\n\nHis content draws on the visual language of social media: mirror selfies, café scenes, meals out and skincare routines. The aim is to create an approachable, recognizable presence, with images that feel like moments from a continuous story.\n\nThe project explores character consistency across different settings. His features, styling, gestures and the atmosphere of each scene work together to maintain a coherent identity across still images and video.\n\nWithin Bralipo Labs, Minjun brings together character creation, art direction and AI content. He is an exploration of how to develop a virtual influencer with a distinctive background, interests and visual style.",
+    "scope": "AI character creation · Art direction · Lifestyle content · Image and video",
+    "role": "Creation and development of Minjun, character concept development and creative direction of images and videos using artificial intelligence tools.",
+    "alt": "Minjun, a virtual character, taking a mirror selfie.",
+    "seoTitle": "Minjun: AI Lifestyle Influencer and Virtual Model",
+    "seoDescription": "Meet Minjun, an AI-created virtual influencer by Bralipo. A character from Seoul exploring fashion, coffee, fitness and everyday life."
+  },
+  "slug": "minjun",
+  "external": "https://www.instagram.com/_notminjun/",
+  "featured": true,
+  "es": {
+    "summary": "Influencer virtual de lifestyle creado con IA. Un modelo y barista de Seúl cuyo universo combina moda, café y momentos cotidianos.",
+    "description": "Minjun es un personaje virtual creado con inteligencia artificial, imaginado como un modelo y barista de Seúl, Corea del Sur. Su identidad se construye alrededor del lifestyle: la ropa que elige, su vínculo con el café, el entrenamiento y los pequeños momentos de su día.\n\nEl contenido adopta el lenguaje visual de las redes sociales: selfies frente al espejo, escenas en cafeterías, salidas a comer y rutinas de cuidado personal. La propuesta busca una presencia cercana y reconocible, con imágenes que parecen fragmentos de una misma historia.\n\nEl proyecto explora la continuidad de un personaje digital en distintos escenarios. Sus rasgos, el estilismo, los gestos y la atmósfera de cada escena trabajan juntos para mantener una identidad coherente, tanto en fotografías como en piezas de video.\n\nDentro de Bralipo Labs, Minjun reúne creación de personajes, dirección de arte y contenido con IA. Es una exploración de cómo desarrollar un influencer virtual con un contexto, intereses y una estética propios.",
+    "scope": "Creación de personajes con IA · Dirección de arte · Contenido lifestyle · Imagen y video",
+    "role": "Creación y desarrollo de Minjun, definición del concepto del personaje y dirección creativa de imágenes y videos con herramientas de inteligencia artificial.",
+    "alt": "Minjun, personaje virtual, tomando una selfie frente al espejo.",
+    "seoTitle": "Minjun: influencer virtual de lifestyle creado con IA",
+    "seoDescription": "Conocé a Minjun, influencer virtual creado con IA por Bralipo. Un personaje de Seúl que combina moda, café, entrenamiento y vida cotidiana."
+  },
+  "published": true,
+  "order": 3,
+  "date": "2026-11-08T16:34:00.000-03:00",
+  "gallery": [],
+  "status": "live",
+  "cover": "/images/uploads/man_taking_mirror_selfie_202608310047.jpeg",
+  "title": "Minjun",
+  "category": "influencers"
 }
