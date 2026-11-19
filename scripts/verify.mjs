@@ -19,7 +19,7 @@ for(const file of all){
  const confirmation=/[\\/](gracias|thank-you)[\\/]index\.html$/.test(file);
  if(confirmation)assert.match(html,/<meta name="robots" content="noindex/);
  if(process.env.VERIFY_INDEXABLE==='true'&&!file.endsWith('404.html')&&!confirmation){
-  assert.match(html,/<link rel="canonical" href="https:\/\/bralipo\.example\//,`${file}: canonical`);
+  assert.ok(html.includes(`<link rel="canonical" href="${process.env.SITE_URL||'https://bralipo.example'}/`),`${file}: canonical`);
   assert.match(html,/<link rel="alternate" hreflang="es"/,`${file}: Spanish alternate`);
   assert.match(html,/<link rel="alternate" hreflang="en"/,`${file}: English alternate`);
   assert.doesNotMatch(html,/Vista de prueba|Preview sample/,`${file}: demo excluded`);

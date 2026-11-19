@@ -26,13 +26,23 @@ Abrir http://localhost:4321/es/ o /en/. Para el CMS, ejecutar también `npm run 
 1. Crear repositorio GitHub y conectar Netlify. Build `npm run build`, salida `dist`.
 2. Repositorio configurado: `bralipo2-pixel/bralipoweb`, rama `main`. El postbuild ajusta el dominio OAuth y desactiva el proxy local en Netlify.
 3. Configurar OAuth de GitHub en Netlify para el backend GitHub de Decap. No usar Git Gateway. Cada editor necesita acceso de escritura al repositorio.
-4. Configurar el dominio y `SITE_URL=https://dominio-confirmado` (sin slash final).
+4. Dominio de producción: `https://bralipo.com`, configurado en `netlify.toml`. Elegirlo también como dominio principal en Netlify y verificar HTTPS para el dominio raíz y www. Revisar que variables del panel no sobrescriban SITE_URL o PUBLIC_INDEXABLE con valores anteriores.
 5. Activar detección de formularios en Netlify, redeploy y configurar notificaciones a bralipo2@gmail.com. `netlify.toml` habilita `PUBLIC_FORM_ENABLED=true` solo en producción. Verificar un envío real antes de lanzar.
 6. Reemplazar ejemplos, revisar traducciones, autoría de casos, biografía y portadas.
-7. Solo después de revisar el contenido: `PUBLIC_INDEXABLE=true`. Esto activa canonical/hreflang y sitemap y excluye demos. Las deploy previews continúan con noindex.
+7. Producción habilita `PUBLIC_INDEXABLE=true`. Esto activa canonical/hreflang y sitemap y excluye demos. Las deploy previews continúan con noindex.
 8. Verificar dominio canónico, redirecciones de URLs anteriores, rendimiento móvil, Rich Results y Search Console.
 
 No se promete posicionamiento. `noindex` no restringe el acceso: la primera versión está pensada para revisión local. Decap no tiene autenticación de producción configurada hasta completar los pasos anteriores.
+
+## Visitas y Search Console
+
+- Crear propiedad GA4 Bralipo y flujo Web para https://bralipo.com. Desactivar la medición mejorada en ese flujo: la integración controla explícitamente los eventos para evitar medición automática de campos de formularios o URLs con parámetros.
+- Añadir `PUBLIC_GA_ID=G-…` a las variables de Netlify para producción antes del siguiente deploy. El ID es público. Sin ID válido no se muestra el control de consentimiento ni se carga Google. Solo se activa en contexto production y hostname bralipo.com; previews y localhost no generan visitas.
+- La elección se conserva en localStorage. Antes de aceptar no se solicita ningún recurso a Google. Rechazar o revocar detiene la medición; revocar elimina las cookies _ga y recarga para retirar el script. Los eventos son page_view, navigation_click, contact_click y generate_lead, este último solo tras respuesta exitosa del formulario. No se envían valores del formulario, textos de enlaces, query strings ni fragments. No hay grabación de sesiones.
+- Marcar generate_lead como evento clave en GA4. Verificar desde Tiempo real aceptando estadísticas, navegar y comprobar enlaces. Probar el formulario solo una vez con un mensaje identificado como prueba.
+- En Google Search Console, añadir propiedad de tipo Dominio `bralipo.com`. Copiar el TXT de verificación a la zona DNS de Netlify (no a Spaceship, ahora que Netlify gestiona DNS). Mantener el TXT tras verificar. No requiere JavaScript ni un deploy.
+- Después de publicar el build indexable, enviar https://bralipo.com/sitemap.xml e inspeccionar /es/ y /en/ en Search Console. La configuración local por sí sola no cambia el sitio publicado.
+- Comprobar tras publicar: HTTPS, redirección permanente desde www y el dominio netlify.app conservando rutas, canonical/hreflang, robots/sitemap, login Decap y formulario. Si Netlify mantiene pausados los deploys por créditos, estos cambios requieren reactivar el despliegue o esperar al reinicio del ciclo.
 
 ## Diseño y fuentes
 

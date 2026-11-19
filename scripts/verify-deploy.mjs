@@ -13,7 +13,7 @@ const run=extra=>{
 };
 let result=run({});assert.equal(result.status,0,result.stderr);
 let config=fs.readFileSync(path.join(root,'admin/config.yml'),'utf8');
-assert.match(config,/repo: bralipo2-pixel\/bralipoweb\n/);
+assert.match(config,/repo: bralipo2-pixel\/bralipoweb\r?\n/);
 assert.match(config,/local_backend: false/);
 assert.doesNotMatch(config,/localhost:8081/);
 assert.match(config,/site_domain: bralipo-check.netlify.app/);

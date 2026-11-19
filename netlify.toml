@@ -9,6 +9,21 @@ PUBLIC_FORM_ENABLED = "false"
 
 [context.production.environment]
 PUBLIC_FORM_ENABLED = "true"
+SITE_URL = "https://bralipo.com"
+PUBLIC_INDEXABLE = "true"
+PUBLIC_GA_ID = "G-6B4MP5254T"
+
+[[redirects]]
+from = "https://bralipo.netlify.app/*"
+to = "https://bralipo.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.bralipo.com/*"
+to = "https://bralipo.com/:splat"
+status = 301
+force = true
 
 [[redirects]]
 from = "/"

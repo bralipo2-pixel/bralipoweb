@@ -1,5 +1,6 @@
 ---
 import Icon from '../components/Icon.jsx';
+import Analytics from '../components/Analytics.astro';
 import '../styles/global.css';
 import {href,t,indexable} from '../data.js';
 const {lang='es',title,description,otherPath,canonicalPath=Astro.url.pathname,image='/images/logowhite.png',demo=false}=Astro.props;
@@ -23,6 +24,7 @@ const isHome=Astro.url.pathname===href(lang,'home')||Astro.url.pathname===href(l
  {live&&<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'Bralipo',url:origin,logo:new URL('/images/logowhite.png',origin).href,email:'bralipo2@gmail.com',sameAs:['https://www.linkedin.com/company/bralipo/','https://www.instagram.com/bra.lipo/']})}/>}
 </head>
 <body id="top" class:list={{'is-home':isHome}}>
+ <Analytics lang={lang}/>
  <a class="skip-link" href="#main">{t(lang,'Saltar al contenido','Skip to content')}</a>
  <header class="header">
   <a href={href(lang,'home')} class="logo" aria-label={t(lang,'Bralipo, inicio','Bralipo, home')}><img src="/images/logowhite.png" width="534" height="122" alt="BRALIPO"/></a>
@@ -78,7 +80,7 @@ const isHome=Astro.url.pathname===href(lang,'home')||Astro.url.pathname===href(l
   event.preventDefault();const status=form.querySelector('.form-status');const button=form.querySelector('button[type=submit]');const es=form.getAttribute('data-lang')==='es';
   if(form.getAttribute('data-enabled')!=='true'||['localhost','127.0.0.1'].includes(location.hostname)){status.textContent=es?'Esta vista previa no envía mensajes. Escribinos a bralipo2@gmail.com.':'This preview does not send messages. Email bralipo2@gmail.com.';return;}
   button.disabled=true;form.setAttribute('aria-busy','true');status.textContent=es?'Enviando…':'Sending…';
-  try{const response=await fetch(form.getAttribute('data-submit-path')||location.pathname,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()});if(!response.ok)throw new Error('delivery');status.textContent=es?'Recibimos tu consulta. Gracias por escribirnos.':'Your inquiry was received. Thanks for getting in touch.';form.reset();}catch{status.textContent=es?'No pudimos enviar tu consulta. Intentá nuevamente o escribinos por email.':'We could not send your inquiry. Please try again or email us.';}finally{button.disabled=false;form.removeAttribute('aria-busy');}
+  try{const response=await fetch(form.getAttribute('data-submit-path')||location.pathname,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()});if(!response.ok)throw new Error('delivery');status.textContent=es?'Recibimos tu consulta. Gracias por escribirnos.':'Your inquiry was received. Thanks for getting in touch.';form.reset();document.dispatchEvent(new Event('bralipo:contact-sent'));}catch{status.textContent=es?'No pudimos enviar tu consulta. Intentá nuevamente o escribinos por email.':'We could not send your inquiry. Please try again or email us.';}finally{button.disabled=false;form.removeAttribute('aria-busy');}
  });
  </script>
 </body>

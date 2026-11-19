@@ -1,0 +1,70 @@
+---
+const {lang='es'}=Astro.props;
+const id=import.meta.env.PUBLIC_GA_ID||'';
+const enabled=/^G-[A-Z0-9]+$/.test(id)&&import.meta.env.CONTEXT==='production';
+const es=lang==='es';
+---
+{enabled&&<aside data-analytics-id={id} class="analytics-consent" aria-label={es?'Preferencias de estadísticas':'Analytics preferences'}>
+ <div data-consent-panel hidden>
+  <p>{es?'¿Nos ayudás a mejorar Bralipo? Si aceptás, usamos Google Analytics para medir visitas, navegación y consultas enviadas. No enviamos el texto de tus mensajes. Podés cambiar tu elección desde «Estadísticas».':'Help us improve Bralipo. If you accept, we use Google Analytics to measure visits, navigation and submitted inquiries. We do not send your message text. You can change your choice using “Analytics”.'}</p>
+  <div class="consent-actions"><button type="button" data-consent="yes">{es?'Aceptar estadísticas':'Accept analytics'}</button><button type="button" data-consent="no">{es?'Rechazar':'Reject'}</button></div>
+ </div>
+ <button type="button" data-consent-settings aria-expanded="false">{es?'Estadísticas':'Analytics'}</button>
+</aside>}
+<style>
+ .analytics-consent{position:fixed;bottom:14px;left:14px;z-index:1000;font-family:Arial,sans-serif;font-size:14px;max-width:min(440px,calc(100vw - 28px));color:#f9f9f9}
+ [data-consent-panel]{padding:20px;background:#1e1e1e;border:1px solid #757575;border-radius:16px;box-shadow:0 6px 24px #0004;margin-bottom:8px}
+ p{margin:0 0 16px;line-height:1.6}.consent-actions{display:flex;gap:12px;flex-wrap:wrap}
+ button{cursor:pointer;background:#1e1e1e;color:#f9f9f9;border:1px solid #999;border-radius:8px;padding:10px 14px;font:inherit}
+ button:focus-visible{outline:3px solid #8cff2e;outline-offset:3px}
+</style>
+<script>
+ const container=document.querySelector<HTMLElement>('[data-analytics-id]');
+ if(container&&location.hostname==='bralipo.com'){
+  const id=container.dataset.analyticsId!;
+  const panel=container.querySelector<HTMLElement>('[data-consent-panel]')!;
+  const settings=container.querySelector<HTMLButtonElement>('[data-consent-settings]')!;
+  const key='bralipo-analytics-consent-v1';
+  const win=window as typeof window & {dataLayer?:unknown[];gtag?:(...args:unknown[])=>void};
+  let accepted=false,loaded=false;
+  const show=(open:boolean)=>{panel.hidden=!open;settings.setAttribute('aria-expanded',String(open));};
+  function start(){
+   (window as unknown as Record<string,unknown>)[`ga-disable-${id}`]=false;
+   accepted=true;if(loaded)return;loaded=true;
+   win.dataLayer=win.dataLayer||[];
+   win.gtag=function(){win.dataLayer!.push(arguments);};
+   win.gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+   win.gtag('js',new Date());
+   win.gtag('config',id,{send_page_view:false,page_location:location.origin+location.pathname,page_referrer:document.referrer?new URL(document.referrer).origin:'',allow_google_signals:false,allow_ad_personalization_signals:false});
+   // Never include query strings, fragments, link text or form fields.
+   win.gtag('event','page_view',{page_location:location.origin+location.pathname,page_referrer:document.referrer?new URL(document.referrer).origin:'',page_title:document.title});
+   const script=document.createElement('script');script.async=true;script.src=`https://www.googletagmanager.com/gtag/js?id=${id}`;document.head.append(script);
+  }
+  function track(name:string,params:Record<string,string>={}){if(accepted)win.gtag?.('event',name,{...params,page_location:location.origin+location.pathname});}
+  let saved=null;try{saved=localStorage.getItem(key);}catch{}
+  if(saved==='yes')start();else if(saved!=='no')show(true);
+  settings.addEventListener('click',()=>show(panel.hidden));
+  container.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach(button=>button.addEventListener('click',()=>{
+   const choice=button.dataset.consent!;
+   try{localStorage.setItem(key,choice);}catch{}
+   show(false);settings.focus();
+   if(choice==='yes')start();else{
+    accepted=false;
+    // Disable collection immediately, then reload to remove the loaded tag.
+    (window as unknown as Record<string,unknown>)[`ga-disable-${id}`]=true;
+    for(const cookie of document.cookie.split(';')){
+     const name=cookie.trim().split('=')[0];if(!/^_ga(?:_|$)/.test(name))continue;
+     for(const domain of ['',`; Domain=${location.hostname}`,`; Domain=.${location.hostname}`])document.cookie=`${name}=; Max-Age=0; Path=/${domain}; Secure; SameSite=Lax`;
+    }
+    if(loaded)location.reload();
+   }
+  }));
+  document.addEventListener('click',event=>{
+   const link=(event.target as Element).closest<HTMLAnchorElement>('a[href]');if(!link)return;
+   const url=new URL(link.href,location.href);
+   if(url.protocol==='mailto:')track('contact_click',{contact_method:'email'});
+   else if(url.protocol==='https:'||url.protocol==='http:')track('navigation_click',{link_domain:url.hostname,link_path:url.pathname,link_type:url.origin===location.origin?'internal':'external'});
+  });
+  document.addEventListener('bralipo:contact-sent',()=>track('generate_lead',{method:'contact_form'}));
+ }
+</script>
